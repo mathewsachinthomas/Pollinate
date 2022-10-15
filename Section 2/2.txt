@@ -1,0 +1,11 @@
+create table employee 
+(
+employee_id int,
+name varchar(20),
+months int,
+salary int
+)
+
+insert into employee values (99989,'Joe',9,3573)
+
+select name from employee where salary > 2000 and months < 10 order by employee_id

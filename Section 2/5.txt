@@ -1,0 +1,10 @@
+Query to print the pattern P(20) desc.
+
+WITH nums AS
+       (SELECT 1 AS value
+        UNION ALL
+        SELECT value + 1 AS value
+        FROM nums
+        WHERE nums.value <=20)
+    SELECT replicate('*',value)
+    FROM nums  order by value desc

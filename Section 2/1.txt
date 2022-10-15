@@ -1,1 +1,13 @@
 
+create table city 
+(
+Id int,
+Name varchar(17),
+CountryCode varchar(3),
+District varchar(2),
+Population bigint
+)
+insert into city values (1660,'abc','+61','ns',2000000)
+insert into city values (1661,'xyz','+62','ns',2500000)
+
+select * from city where id=1661

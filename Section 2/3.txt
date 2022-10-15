@@ -1,0 +1,14 @@
+create table occupations
+(
+name varchar(20),
+occupation varchar(25)
+)
+
+--alphabetically ordered list of all names in OCCUPATIONS, immediately followed by the first letter of each profession as a parenthetical 
+--(i.e.: enclosed in parentheses). For example: AnActorName(A), ADoctorName(D), AProfessorName(P), and ASingerName(S).
+
+select concat(name,'(', LEFT(occupation,1),')') from occupations order by name;
+
+
+--Query the number of ocurrences of each occupation in OCCUPATIONS
+select 'There are a total of ', count(occupation),occupation from occupations GROUP BY occupation order by count(occupation) 

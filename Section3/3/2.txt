@@ -1,0 +1,8 @@
+create  procedure Moviereport
+AS
+Begin
+select movie_name ,Genre,year,MPAA_RATING,TOTAL_FOR_YEAR from dw.DI_sales s join dw.DI_movie m on 
+s.movie_id = m.movie_id order by TOTAL_FOR_YEAR desc
+END
+
+exec Moviereport

@@ -1,0 +1,29 @@
+
+CREATE TABLE messages ( 
+    id INTEGER NOT NULL PRIMARY KEY IDENTITY(1,1),
+    type VARCHAR(30) NOT NULL,
+    data VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE notifications ( 
+    id INTEGER NOT NULL PRIMARY KEY,
+    message VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE alerts ( 
+    id INTEGER NOT NULL PRIMARY KEY,
+    shortMessage VARCHAR(15) NOT NULL
+);
+
+INSERT INTO messages ( type, data) VALUES ( 'notification', 'Hello') ;
+INSERT INTO messages ( type, data) VALUES ( 'alert', 'Danger! Danger! Danger!');
+
+
+create  procedure ParseMEssages
+AS
+Begin
+insert into messages(type,data)  select 'notification',message from notifications 
+insert into messages(type,data)  select 'alerts',shortMessage from alerts  
+END
+
+exec ParseMEssages

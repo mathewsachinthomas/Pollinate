@@ -1,0 +1,6 @@
+
+
+1) Created Keyvault in Azure test account
+2) Created Datafactory instance.
+3) Created Blob storage to store csv files.
+4) Create Data Ingestion job inside Data factory to transfer csv files to Azure Sql Database.

@@ -1,1 +1,10 @@
 
+create  procedure GetTotalTicketsSold
+AS
+Begin
+select sum(t.TICKET_SOLD) as TotalSold ,Genre from dw.DI_ticket t join dw.DI_movie m on 
+t.movie_id = m.movie_id join  dw.DI_sales s on 
+m.movie_id = s.movie_id group by genre,ticket_sold,TOTAL_FOR_YEAR order by TOTAL_FOR_YEAR desc
+END
+
+exec GetTotalTicketsSold
